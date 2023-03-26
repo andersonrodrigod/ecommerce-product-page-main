@@ -89,7 +89,6 @@ header {
 }
 
 .cart-empty {
-    display: none;
     position: absolute;
     top: 15%;
     left: 76%;
@@ -109,6 +108,18 @@ header {
     min-height: 190px;
     background-color: white;
     box-shadow: 2px 3px 5px 3px #999;  
+}
+
+.active-cart-empty {
+    display: none;
+}
+
+.full {
+    display: none;
+}
+
+.empty {
+    display: none;
 }
 
 .active-cart-full {
@@ -334,7 +345,7 @@ main {
     color: black;
 }
 
-.
+
 
 
 

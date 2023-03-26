@@ -28,7 +28,7 @@
 
     <div class="menu-right">
       <div class="box-cart">
-        <img src="images/icon-cart.svg" alt="">
+        <img class="cart-btn" src="images/icon-cart.svg" alt="">
       </div>
       <div class="box-avatar">
         <img src="images/image-avatar.png" alt="">
@@ -57,7 +57,9 @@
         </div>
       </div>
       <div class="trash">
-        <i class="fa-regular fa-trash-can"></i>
+        <button class="trash-btn">
+          <i class="fa-regular fa-trash-can"></i>
+        </button>
       </div>
     </div>
     <div class="box-checkout">
@@ -65,7 +67,7 @@
     </div>
   </div>
   
-  <div class="cart-empty">
+  <div class="cart-empty active-cart-empty">
     <div class="box-title-cart">
       <span class="title-cart">Cart</span>
     </div>
@@ -116,18 +118,22 @@
       <form action="" id="form">
         <div class="background-button">
           <div class="acording-height-button">
-            <i class="fa-solid fa-minus"></i>
+            <button class="menos">
+              <i class="fa-solid fa-minus"></i>
+            </button>
           </div>
           <div>
-            <span class="number">0</span>
+            <span class="number" >0</span>
           </div>
           <div class="acording-height-button">
-            <i class="fa-solid fa-plus"></i>
+            <button class="mais">
+              <i class="fa-solid fa-plus"></i>
+            </button>
           </div>
         </div>
-        <span class="add-cart">
+        <button type="submit" class="add-cart">
           <i class="fa-solid fa-cart-shopping"></i> Add to cart
-        </span>
+        </button type="submit">
       </form>
     </section>
   </main>
@@ -138,5 +144,6 @@
       Coded by <a href="#">Your Name Here</a>.
     </div>
   </footer>
+  <script src="script.js"></script>
 </body>
 </html>
