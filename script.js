@@ -5,58 +5,85 @@ const menos = document.querySelector(".menos")
 const mais = document.querySelector(".mais")
 const addCart = document.querySelector(".add-cart")
 const trashBtn = document.querySelector(".trash-btn")
+const turn = document.querySelector(".turn-amount")
+const amount = document.querySelector(".amount")
+const price = document.querySelector(".price-total")
+
+let priceShoes = 125
 let number = document.querySelector(".number")
-
 let count = 0
+let cartWithProduct = false
 
-function cardVazio() {
-    cartEmpty.classList.toggle("active-cart-empty")
-    
+ 
+
+function toggleEmptyCart() {
+    cartEmpty.classList.toggle("active-cart-empty")  
 }
 
-function returnCardVazio() {
-    cartBtn.addEventListener("click", cardVazio)
+function removeEmptyCart() {
+    cartEmpty.classList.add("active-cart-empty")  
 }
 
-function cardFull() {
-    cartFull.classList.toggle("active-cart-full")
+function returnEmptyCart() {
+    cartBtn.addEventListener("click", toggleEmptyCart)
+}
+
+function activeCartFull() {  
+    cartFull.classList.toggle("active-cart-full")  
 }
 
 function removeCartFull() {
     cartFull.classList.add("active-cart-full");
-    cartBtn.removeEventListener("click", cardFull);
-  }
+    cartBtn.removeEventListener("click", activeCartFull);
+}
 
 function oneProduct() {
-    const turn = document.querySelector(".turn-amount")
-    const amount = document.querySelector(".amount")
-    const price = document.querySelector(".price-total")
-    cartBtn.addEventListener("click", cardFull)
-        turn.style.display = "none"
-        amount.style.display = "none"
-        price.style.display = "none"
+    turn.style.display = "none"
+    amount.style.display = "none"
+    price.style.display = "none"
+}
+
+function moreValues() {
+    let total = priceShoes * count
+    if (count == 1) {
+        price.textContent = `${priceShoes},00`
+        amount.textContent = count
+    } else {
+        amount.textContent = count
+        price.textContent = `${total},00`
+        
+    }
+    
 }
 
 
 
-cartBtn.addEventListener("click", cardVazio)
+cartBtn.addEventListener("click", toggleEmptyCart)
 
 trashBtn.addEventListener("click", () => {
     count = 0;
     number.textContent = count;
     removeCartFull()
-    returnCardVazio()
+    returnEmptyCart()
 })
+
+
+let countHistory = [];
+
 
 addCart.addEventListener("click", (e) => {
     e.preventDefault()
-    if(count == 1) {
-        cartEmpty.classList.add("active-cart-empty")
-        cartBtn.removeEventListener("click", cardVazio)
-        oneProduct()
-        cardFull()
+    if(count >= 1) {
+        let newCount = parseInt(count)
+        countHistory.push(newCount)
+        count = countHistory.reduce((total, num) => total + num)
+        console.log(count) 
+        removeEmptyCart()
+        cartBtn.removeEventListener("click",toggleEmptyCart)
+        cartBtn.addEventListener("click", activeCartFull)
     } 
-    number.textContent = count
+    
+       
 })
 
 mais.addEventListener("click", (e) => {
