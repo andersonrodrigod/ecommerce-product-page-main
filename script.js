@@ -12,8 +12,7 @@ const price = document.querySelector(".price-total")
 let priceShoes = 125
 let number = document.querySelector(".number")
 let count = 0
-let cartWithProduct = false
-
+let valores = []
  
 
 function toggleEmptyCart() {
@@ -44,19 +43,8 @@ function oneProduct() {
 }
 
 function moreValues() {
-    let total = priceShoes * count
-    if (count == 1) {
-        price.textContent = `${priceShoes},00`
-        amount.textContent = count
-    } else {
-        amount.textContent = count
-        price.textContent = `${total},00`
-        
-    }
     
 }
-
-
 
 cartBtn.addEventListener("click", toggleEmptyCart)
 
@@ -67,25 +55,41 @@ trashBtn.addEventListener("click", () => {
     returnEmptyCart()
 })
 
+function actualCount() {
+    console.log(lastClicked)
+}
 
-let countHistory = [];
+const src = document.querySelectorAll(".src")
+const imgPreviewBig = document.querySelectorAll(".img-preview-big")
 
+src.forEach((img) => {
+    img.addEventListener("click", (e) => {
+        let item = e.currentTarget
+        imgPreviewBig.forEach((imgBig, idc) => {
+            console.log(idc)
+        }) 
+    })
+})
 
 addCart.addEventListener("click", (e) => {
     e.preventDefault()
-    if(count >= 1) {
-        let newCount = parseInt(count)
-        countHistory.push(newCount)
-        count = countHistory.reduce((total, num) => total + num)
-        console.log(count) 
-        removeEmptyCart()
-        cartBtn.removeEventListener("click",toggleEmptyCart)
-        cartBtn.addEventListener("click", activeCartFull)
-    } 
-    
-       
-})
 
+    if (count > 0){
+        valores.push(count);
+        const soma = valores.reduce((acumulado, valorAtual) => {
+            return acumulado + valorAtual  
+        })
+        amount.textContent = soma
+        const total = `${priceShoes * soma}`
+        price.textContent = `${total},00`
+    } 
+     
+    removeEmptyCart()
+    cartBtn.removeEventListener("click",toggleEmptyCart)
+    cartBtn.addEventListener("click", activeCartFull)
+    moreValues()
+    
+})
 mais.addEventListener("click", (e) => {
     e.preventDefault()  
     count++

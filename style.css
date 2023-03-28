@@ -206,6 +206,14 @@ main {
     border-radius: 3%;
 }
 
+.active {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
 .img-preview {
     display: flex;
     margin-top: 20px;
