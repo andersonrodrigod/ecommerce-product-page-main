@@ -60,15 +60,35 @@ function actualCount() {
 }
 
 const src = document.querySelectorAll(".src")
-const imgPreviewBig = document.querySelectorAll(".img-preview-big")
+const imgBig = document.querySelectorAll(".imgBig")
+const imgBig1 = document.querySelector(".big-1")
+const imgBig2 = document.querySelector(".big-2")
+const imgBig3 = document.querySelector(".big-3")
+const imgBig4 = document.querySelector(".big-4")
 
 src.forEach((img) => {
     img.addEventListener("click", (e) => {
-        let item = e.currentTarget
-        imgPreviewBig.forEach((imgBig, idc) => {
-            console.log(idc)
-        }) 
+        const item = e.currentTarget
+        imgBig.forEach((big) => {
+            big.classList.remove("active")
+            big.classList.add("hidden")
+        })
+        
+        if(item.classList.contains("src1")) {
+            imgBig1.classList.add("active")
+            imgBig1.classList.remove("hidden")
+        } else if (item.classList.contains("src2")) {
+            imgBig2.classList.add("active")
+            imgBig2.classList.remove("hidden")
+        } else if (item.classList.contains("src3")) {
+            imgBig3.classList.add("active")
+            imgBig3.classList.remove("hidden")
+        } else {
+            imgBig4.classList.add("active")
+            imgBig4.classList.remove("hidden")
+        }    
     })
+    
 })
 
 addCart.addEventListener("click", (e) => {
