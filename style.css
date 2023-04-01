@@ -440,6 +440,10 @@ footer {
     padding: 0;   
 }
 
+.menu-hamb {
+    display: none;
+}
+
 
 @media only screen and (max-width: 375px) {
     * {
@@ -471,6 +475,10 @@ footer {
     .acording-hamb-logo {
         display: flex;
         margin-left: 25px;
+    }
+
+    .menu-hamb {
+        display: block;
     }
 
     .menu {
@@ -560,8 +568,37 @@ footer {
         margin-top: 40px;
     }
 
+    .btn-left {
+        position: absolute;
+        top: 25%;
+        background-color: white;
+        padding: 20px 20px 20px 20px;
+        border-radius: 50%;
+        left: 5%;
+        cursor: pointer;
+    }
+
+    .btn-left > i {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        
+    }
+
+    .btn-right {
+        position: absolute;
+        top: 25%; 
+        background-color: white;
+        padding: 12px 14.7px 12px 14.7px;
+        border-radius: 50%;
+        left: 84%;
+        cursor: pointer;
+    }
     
-    
+    .btn-right > i {
+        
+    }
 
 }
 

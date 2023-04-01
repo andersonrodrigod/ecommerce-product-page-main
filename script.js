@@ -105,27 +105,25 @@ const classesMap = {
   "src4": "big-4",
 }
 
-src.forEach((img) => {  
-  img.addEventListener("click", (e) => {
-    const item = e.currentTarget
-    
-    
-    imgBig.forEach((big) => { 
-        big.classList.remove("active")
-        big.classList.add("hidden")
-    })
-   
-
-    
-    const bigImgClass = classesMap[item.classList[1]]
-    const bigImg = document.querySelector(`.${bigImgClass}`)
-    if (bigImg) {
-      bigImg.classList.add("active")
-      bigImg.classList.remove("hidden")
+src.forEach((img) => {
+    if (!/Mobi/.test(navigator.userAgent)) {
+      img.addEventListener("click", (e) => {
+        const item = e.currentTarget;
+  
+        imgBig.forEach((big) => {
+          big.classList.remove("active");
+          big.classList.add("hidden");
+        });
+  
+        const bigImgClass = classesMap[item.classList[1]];
+        const bigImg = document.querySelector(`.${bigImgClass}`);
+        if (bigImg) {
+          bigImg.classList.add("active");
+          bigImg.classList.remove("hidden");
+        }
+      });
     }
-  })
-})
-
+  });
 
 
 cartBtn.addEventListener("click", toggleEmptyCart)
