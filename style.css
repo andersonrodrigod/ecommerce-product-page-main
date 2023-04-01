@@ -461,6 +461,7 @@ footer {
     .body-color {
         display: flex;
         flex-direction: column;
+        justify-content: center;
         
     }
 
