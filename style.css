@@ -27,8 +27,9 @@
 body {
     font-family: 'Kumbh Sans', sans-serif;
     height: 100vh;
-    
+    position: relative;
 }
+
 
 header {
     border-bottom: 1px solid rgba(0, 0, 0, 0.256);
@@ -38,8 +39,7 @@ header {
     font-size: 16px;
     margin-bottom: 50px;
     margin-left: 100px;
-    margin-right: 100px;
-     
+    margin-right: 100px;   
 }
 
 .logo-img {
@@ -197,22 +197,16 @@ main {
     margin-top: 80px;
     margin-left: 150px;
     margin-right: 120px;
-    padding-bottom: 100px;
+    padding-bottom: 190px; 
 }
 
 .preview-product img {
     min-height: 400px;
     width: 400px;
     border-radius: 3%;
+    cursor: pointer;
 }
 
-.active {
-    display: block;
-}
-
-.hidden {
-    display: none;
-}
 
 .img-preview {
     display: flex;
@@ -352,6 +346,106 @@ main {
     background-color: var(--Orange-Pale-orange);
     color: black;
 }
+
+.img-preview-show-click {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: transparent;
+    filter: none;
+    z-index: 2;
+    
+}
+
+.preview-product-click img {
+    min-height: 500px;
+    width: 450px;
+}
+
+.preview-product-click {
+    position: relative;
+}
+
+.preview-product-click button {
+    border-radius: 50%;
+    border-color: white;
+    height: 50px;
+    width: 50px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.preview-product-click button i {
+    font-size: 2.5em;
+}
+
+.btn-right {
+   position: absolute;
+   top: 50%;
+   left: 94%;
+}
+
+.btn-right i:hover {
+   color: var(--Orange);
+}
+
+.btn-left {
+    position: absolute;
+    right: 94%;
+    top: 50%;
+}
+
+.btn-left i:hover {
+    color: var(--Orange);
+}
+
+.btn-quit {
+    position: relative;
+    left: 92%;
+    cursor: pointer;
+    width: 30px;
+}
+
+.btn-quit i {
+    font-size: 3em;
+    color: white;
+}
+
+.btn-quit i:hover {
+    font-size: 3em;
+    color: var(--Orange);
+}
+
+.dark-screen {
+    background-color: #999; 
+    filter: brightness(50%);  
+}
+
+.event-off {
+    pointer-events: none;
+}
+
+.active {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+footer {
+    text-align: center;
+    padding: 0;   
+}
+
+
+
+
+ 
+
 
 
 

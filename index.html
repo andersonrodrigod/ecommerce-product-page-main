@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
@@ -10,145 +10,183 @@
 </head>
 <body>
 
-  <header>
-
-    <div class="logo-img">
-      <img src="images/logo.svg" alt="">
-    </div>
-
-    <nav class="menu">
-      <ul>
-        <li class="menu-item">Collections</li>
-        <li class="menu-item" >Men</li>
-        <li class="menu-item">Women</li>
-        <li class="menu-item">About</li>
-        <li class="menu-item">Contact</li>
-      </ul>
-    </nav>
-
-    <div class="menu-right">
-      <div class="box-cart">
-        <button>
-          <img class="cart-btn" src="images/icon-cart.svg" alt="">
-        </button>
+  <div class="body-color">
+    <header>
+      <div class="logo-img">
+        <img src="images/logo.svg" alt="">
       </div>
-      <div class="box-avatar">
-        <img src="images/image-avatar.png" alt="">
+      <nav class="menu">
+        <ul>
+          <li class="menu-item">Collections</li>
+          <li class="menu-item" >Men</li>
+          <li class="menu-item">Women</li>
+          <li class="menu-item">About</li>
+          <li class="menu-item">Contact</li>
+        </ul>
+      </nav>
+      <div class="menu-right">
+        <div class="box-cart">
+          <button>
+            <img class="cart-btn" src="images/icon-cart.svg" alt="">
+          </button>
+        </div>
+        <div class="box-avatar">
+          <img src="images/image-avatar.png" alt="">
+        </div>
       </div>
-    </div>
-  </header>
-
-  <div class="cart-full active-cart-full">
+    </header>
+    <div class="cart-full active-cart-full">
     
-    <div class="box-title-cart">
-      <span class="title-cart">Cart</span>
-    </div>
-    <div class="acording-cart-product">
-      <div class="box-img">
-        <img src="images/image-product-1-thumbnail.jpg" alt="">
+      <div class="box-title-cart">
+        <span class="title-cart">Cart</span>
       </div>
-      <div class="content-product">
+      <div class="acording-cart-product">
+        <div class="box-img">
+          <img src="images/image-product-1-thumbnail.jpg" alt="">
+        </div>
+        <div class="content-product">
+          <div>
+            <p>Fall Limited Edition Sneakers</p>
+          </div>
+          <div class="acording-info-price">
+            <span class="content-product-price">$125.00</span>
+            <span class="turn-amount">x</span>
+            <span class="amount">3</span>
+            <span class="price-total">$375.00</span>
+          </div>
+        </div>
+        <div class="trash">
+          <button class="trash-btn">
+            <i class="fa-regular fa-trash-can"></i>
+          </button>
+        </div>
+      </div>
+      <div class="box-checkout">
+        <span class="checkout">Checkout</span>
+      </div>
+    </div>
+    
+    <div class="cart-empty active-cart-empty">
+      <div class="box-title-cart">
+        <span class="title-cart">Cart</span>
+      </div>
+      <p>Your cart is empty</p>
+    </div>
+    
+    <main>
+      <section class="img-preview-show">
+        <div class="preview-product">
+          <img class="active imgBig big-1" data-target="src1" src="images/image-product-1.jpg" alt="">
+          <img class="hidden imgBig big-2" data-target="src2" src="images/image-product-2.jpg" alt="">
+          <img class="hidden imgBig big-3" data-target="src3" src="images/image-product-3.jpg" alt="">
+          <img class="hidden imgBig big-4" data-target="src4" src="images/image-product-4.jpg" alt="">
+        </div>
+        <div class="img-preview">
+          <div class="img-small">
+            <img class="src src1" src="images/image-product-1-thumbnail.jpg" alt="">
+          </div>
+          <div class="img-small">
+            <img class="src src2" src="images/image-product-2-thumbnail.jpg" alt="">
+          </div>
+          <div class="img-small">
+            <img class="src src3" src="images/image-product-3-thumbnail.jpg" alt="">
+          </div>
+          <div class="img-small">
+            <img class="src src4" src="images/image-product-4-thumbnail.jpg" alt="">
+          </div>
+        </div>
+      </section>
+    
+      <section class="content-preview">
+        <span class="name-company">SNEAKER COMPANY</span>
+        <h1>Fall Limited Edition Sneakers</h1>
+        <p>
+          These low-profile sneakers are your perfect casual wear companion. Featuring a
+          durable rubber outer sole, they’ll withstand everything the weather can offer.
+        </p>
         <div>
-          <p>Fall Limited Edition Sneakers</p>
+          <div class="acroding-price">
+            <div>
+              <span class="discount">$125.00</span>
+            </div>
+            <div class="box-percent">
+              <span class="percent">50%</span>
+            </div>
+          </div>
+          <div class="box-price">
+            <span class="price">$250.00</span>
+          </div>
         </div>
-        <div class="acording-info-price">
-          <span class="content-product-price">$125.00</span>
-          <span class="turn-amount">x</span>
-          <span class="amount">3</span>
-          <span class="price-total">$375.00</span>
-        </div>
-      </div>
-      <div class="trash">
-        <button class="trash-btn">
-          <i class="fa-regular fa-trash-can"></i>
-        </button>
-      </div>
-    </div>
-    <div class="box-checkout">
-      <span class="checkout">Checkout</span>
-    </div>
-  </div>
-  
-  <div class="cart-empty active-cart-empty">
-    <div class="box-title-cart">
-      <span class="title-cart">Cart</span>
-    </div>
-    <p>Your cart is empty</p>
-  </div>
-  
-  <main>
-    <section class="img-preview-show">
-      <div class="preview-product">
-        <img class="active imgBig big-1" data-target="src1" src="images/image-product-1.jpg" alt="">
-        <img class="hidden imgBig big-2" data-target="src2" src="images/image-product-2.jpg" alt="">
-        <img class="hidden imgBig big-3" data-target="src3" src="images/image-product-3.jpg" alt="">
-        <img class="hidden imgBig big-4" data-target="src4" src="images/image-product-4.jpg" alt="">
-      </div>
-      <div class="img-preview">
-        <div class="img-small">
-          <img class="src src1" src="images/image-product-1-thumbnail.jpg" alt="">
-        </div>
-        <div class="img-small">
-          <img class="src src2" src="images/image-product-2-thumbnail.jpg" alt="">
-        </div>
-        <div class="img-small">
-          <img class="src src3" src="images/image-product-3-thumbnail.jpg" alt="">
-        </div>
-        <div class="img-small">
-          <img class="src src4" src="images/image-product-4-thumbnail.jpg" alt="">
-        </div>
-      </div>
-    </section>
+        <form action="" id="form">
+          <div class="background-button">
+            <div class="acording-height-button">
+              <button class="menos">
+                <i class="fa-solid fa-minus"></i>
+              </button>
+            </div>
+            <div>
+              <span class="number" >0</span>
+            </div>
+            <div class="acording-height-button">
+              <button class="mais">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </div>
+          </div>
+          <button type="submit" class="add-cart">
+            <i class="fa-solid fa-cart-shopping"></i> Add to cart
+          </button type="submit">
+        </form>
+      </section>
+    </main>
     
-    <section class="content-preview">
-      <span class="name-company">SNEAKER COMPANY</span>
-      <h1>Fall Limited Edition Sneakers</h1>
-      <p>
-        These low-profile sneakers are your perfect casual wear companion. Featuring a
-        durable rubber outer sole, they’ll withstand everything the weather can offer.
-      </p>
-      <div>
-        <div class="acroding-price">
-          <div>
-            <span class="discount">$125.00</span>
-          </div>
-          <div class="box-percent">
-            <span class="percent">50%</span>
-          </div>
-        </div>
-        <div class="box-price">
-          <span class="price">$250.00</span>
-        </div>
+    
+    <footer>
+      <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by <a href="#">Your Name Here</a>.
       </div>
-      <form action="" id="form">
-        <div class="background-button">
-          <div class="acording-height-button">
-            <button class="menos">
-              <i class="fa-solid fa-minus"></i>
-            </button>
-          </div>
-          <div>
-            <span class="number" >0</span>
-          </div>
-          <div class="acording-height-button">
-            <button class="mais">
-              <i class="fa-solid fa-plus"></i>
-            </button>
-          </div>
-        </div>
-        <button type="submit" class="add-cart">
-          <i class="fa-solid fa-cart-shopping"></i> Add to cart
-        </button type="submit">
-      </form>
-    </section>
-  </main>
-  
-  <footer>
-    <div class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-      Coded by <a href="#">Your Name Here</a>.
+    </footer>
+  </div>
+
+  <section class="img-preview-show-click hidden">
+    <div class="preview-product preview-product-click">
+      <div class="btn-quit">
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+      
+      
+        <button class="btn-left">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        
+        <button class="btn-right">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      
+        
+      
+      
+      <img class="active imgBig-index big-1-index" src="images/image-product-1.jpg" alt="">
+      <img class="hidden imgBig-index big-2-index" src="images/image-product-2.jpg" alt="">
+      <img class="hidden imgBig-index big-3-index" src="images/image-product-3.jpg" alt="">
+      <img class="hidden imgBig-index big-4-index" src="images/image-product-4.jpg" alt="">
     </div>
-  </footer>
+    <div class="img-preview">
+      <div class="img-small">
+        <img class="src-index src1-index" src="images/image-product-1-thumbnail.jpg" alt="">
+      </div>
+      <div class="img-small">
+        <img class="src-index src2-index" src="images/image-product-2-thumbnail.jpg" alt="">
+      </div>
+      <div class="img-small">
+        <img class="src-index src3-index" src="images/image-product-3-thumbnail.jpg" alt="">
+      </div>
+      <div class="img-small">
+        <img class="src-index src4-index" src="images/image-product-4-thumbnail.jpg" alt="">
+      </div>
+    </div>
+  </section>
   <script src="script.js"></script>
 </body>
 </html>
