@@ -442,6 +442,42 @@ footer {
 }
 
 
+@media only screen and (max-width: 550px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {  
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .body-color {
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .acording-hamb-logo {
+        display: flex;
+        
+    }
+
+    .menu {
+        display: none;
+    }
+}
+
+
 
 
  
