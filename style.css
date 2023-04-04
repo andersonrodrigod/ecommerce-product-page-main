@@ -455,7 +455,7 @@ footer {
     body {
         width: 100vw; 
         height: 100vh;
-        overflow-x: hidden;  
+          
          
     }
 
@@ -532,8 +532,13 @@ footer {
     }
 
     .content-preview {
-        margin-left: 25px;
+        margin-left: 0px;
         margin-top: 25px;
+    }
+
+    .info-product {
+        margin-left: 25px;
+        margin-right: 25px;
     }
 
     .name-company {
@@ -551,6 +556,8 @@ footer {
     .acording-box-price {
         display: flex;
         justify-content: space-between;
+        margin-left: 25px;
+        margin-right: 25px;
     }
 
     .box-price {
@@ -561,25 +568,41 @@ footer {
     #form {
         display: flex;
         flex-direction: column;
-        justify-content: start;
-        align-items: start;
+        width: 100vw;
+        margin-left: 0px;
     }
 
     .background-button {
         display: flex;
-        margin-left: 15px;
-        gap: 120px;   
+        justify-content: center;
+        gap: 105px;
+        width: 100vw;
+        margin-left: 0px;
+           
+    }
+
+    .menos {
+        
+    }
+
+    .number {
+        
+    }
+
+    .mais {
+        
     }
 
     .add-cart {
-        margin-left: 0px;
         margin-top: 25px;
         padding: 15px 112px 15px 112px;
+        margin-left: 0px;
     }
 
     footer {
         margin-top: 40px;
         width: 100vw; 
+
     }
 
     .btn-left {
