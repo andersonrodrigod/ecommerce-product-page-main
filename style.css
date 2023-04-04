@@ -453,8 +453,12 @@ footer {
     }
 
     body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         width: 375px; 
-        overflow-x: hidden;   
+        overflow-x: hidden;  
+        background-color: black; 
     }
 
     .body-color {
