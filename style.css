@@ -520,6 +520,10 @@ footer {
         width: 100vw; 
     }
 
+    .preview-product {
+        position: relative;
+    }
+
     .preview-product img {
         min-height: 0px;
         max-height: 300px;
@@ -581,18 +585,6 @@ footer {
            
     }
 
-    .menos {
-        
-    }
-
-    .number {
-        
-    }
-
-    .mais {
-        
-    }
-
     .add-cart {
         margin-top: 25px;
         padding: 15px 112px 15px 112px;
@@ -605,13 +597,18 @@ footer {
 
     }
 
+    .btn-menu-phone {
+        
+        
+    }
+
     .btn-left {
         position: absolute;
-        top: 25%;
+        top: 50%;
+        left: 5.5%;
         background-color: white;
         padding: 20px 20px 20px 20px;
         border-radius: 50%;
-        left: 5%;
         cursor: pointer;
     }
 
@@ -625,11 +622,10 @@ footer {
 
     .btn-right {
         position: absolute;
-        top: 25%; 
+        left: 80%;
         background-color: white;
         padding: 12px 14.7px 12px 14.7px;
         border-radius: 50%;
-        left: 84%;
         cursor: pointer;
     }
     
