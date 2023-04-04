@@ -453,9 +453,8 @@ footer {
     }
 
     body {
-        width: 375px;  
-        margin: 0px;
-        padding: 0px;
+        width: 375px; 
+        overflow-x: hidden;   
     }
 
     .body-color {
