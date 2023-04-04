@@ -453,10 +453,8 @@ footer {
     }
 
     body {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: 375px; 
+        width: 100vw; 
+        height: 100vh;
         overflow-x: hidden;  
          
     }
@@ -469,7 +467,7 @@ footer {
 
     header {
         display: flex;
-        width: 95vw;
+        width: 100vw; 
         justify-content: space-between;
         margin: 0px;
         margin-top: 20px;
@@ -519,13 +517,13 @@ footer {
         margin: 0px;
         margin-top: 25px;
         padding: 0px;
-        width: 95.5vw;
+        width: 100vw; 
     }
 
     .preview-product img {
         min-height: 0px;
         max-height: 300px;
-        width: 95.5vw;
+        width: 100vw; 
         border-radius: 0%;
     }
     
@@ -581,7 +579,7 @@ footer {
 
     footer {
         margin-top: 40px;
-        width: 95.5vw;
+        width: 100vw; 
     }
 
     .btn-left {
