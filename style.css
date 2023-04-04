@@ -445,7 +445,7 @@ footer {
 }
 
 
-@media only screen and (max-width: 490px) {
+@media only screen and (max-width: 375px) {
     * {
         margin: 0;
         padding: 0;
@@ -453,7 +453,7 @@ footer {
     }
 
     body {
-        width: 375px;  
+        width: 95.5vw;  
         margin: 0px;
         padding: 0px;
     }
@@ -462,11 +462,11 @@ footer {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        
     }
 
     header {
         display: flex;
+        width: 95vw;
         justify-content: space-between;
         margin: 0px;
         margin-top: 20px;
@@ -476,11 +476,18 @@ footer {
 
     .acording-hamb-logo {
         display: flex;
+        align-items: center;
         margin-left: 25px;
     }
 
     .menu-hamb {
         display: block;
+        cursor: pointer;
+        font-size: 1.3em;
+    }
+
+    .logo-img {
+        margin-left: 15px;
     }
 
     .menu {
@@ -492,8 +499,8 @@ footer {
     }
 
     .box-avatar img {
-        height: 25px;
-        width: 25px;
+        height: 30px;
+        width: 30px;
     }
 
     .box-cart {
@@ -505,15 +512,17 @@ footer {
     main {
         display: flex;
         flex-direction: column;
+        justify-content: center;
         margin: 0px;
         margin-top: 25px;
         padding: 0px;
+        width: 95.5vw;
     }
 
     .preview-product img {
         min-height: 0px;
         max-height: 300px;
-        width: 375px;
+        width: 95.5vw;
         border-radius: 0%;
     }
     
@@ -545,6 +554,7 @@ footer {
 
     .box-price {
         margin-top: 34px;
+        margin-right: 25px;
     }
 
     #form {
