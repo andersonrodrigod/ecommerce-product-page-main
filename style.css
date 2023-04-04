@@ -445,7 +445,7 @@ footer {
 }
 
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 550px) {
     * {
         margin: 0;
         padding: 0;
@@ -458,7 +458,7 @@ footer {
         justify-content: center;
         width: 375px; 
         overflow-x: hidden;  
-        background-color: black; 
+         
     }
 
     .body-color {
