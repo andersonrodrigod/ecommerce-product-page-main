@@ -28,6 +28,10 @@ let count = 0
 let valores = []
 let idcActual = 0
 
+
+
+
+
 function toggleEmptyCart() {
     cartEmpty.classList.toggle("active-cart-empty")  
 }
@@ -105,24 +109,37 @@ const classesMap = {
   "src4": "big-4",
 }
 
-src.forEach((img) => {
-    img.addEventListener("click", (e) => {
-        const item = e.currentTarget;
-  
-        imgBig.forEach((big) => {
-          big.classList.remove("active");
-          big.classList.add("hidden");
-        });
-  
-        const bigImgClass = classesMap[item.classList[1]];
-        const bigImg = document.querySelector(`.${bigImgClass}`);
-        if (bigImg) {
-          bigImg.classList.add("active");
-          bigImg.classList.remove("hidden");
-        }
-    });
+let imgBtn = false
+
+if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    imgBtn = true
+} else {
     
-  });
+}
+
+console.log(imgBtn)
+
+if (imgBtn == false) {
+    src.forEach((img) => {
+        img.addEventListener("click", (e) => {
+            console.log(imgBtn)
+            const item = e.currentTarget;
+            imgBig.forEach((big) => {
+                big.classList.remove("active");
+                big.classList.add("hidden");
+            });
+            const bigImgClass = classesMap[item.classList[1]];
+            const bigImg = document.querySelector(`.${bigImgClass}`);
+            if (bigImg) {
+                bigImg.classList.add("active");
+                bigImg.classList.remove("hidden");
+            }
+        
+        })   
+    }); 
+}
+
+
 
 
 cartBtn.addEventListener("click", toggleEmptyCart)
@@ -203,7 +220,6 @@ menos.addEventListener("click", (e) => {
     } 
     number.textContent = count            
 })
-
 
 
 
