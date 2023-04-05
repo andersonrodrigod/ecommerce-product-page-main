@@ -1,12 +1,14 @@
-const cartFull = document.querySelector(".cart-full")
-const cartEmpty = document.querySelector(".cart-empty")
+// DOM
 const turn = document.querySelector(".turn-amount")
 const price = document.querySelector(".price-total")
 const body = document.querySelector(".body-color")
 const header = document.querySelector("header")
 const main = document.querySelector("main")
 const amount = document.querySelector(".amount")
+const cartFull = document.querySelector(".cart-full")
+const cartEmpty = document.querySelector(".cart-empty")
 
+// BTN
 const menos = document.querySelector(".menos")
 const mais = document.querySelector(".mais")
 const cartBtn = document.querySelector(".cart-btn")
@@ -16,43 +18,52 @@ const btnRight = document.querySelector(".btn-right")
 const btnLeft = document.querySelector(".btn-left")
 const btnQuit = document.querySelector(".btn-quit")
 const imgBigIndex = document.querySelectorAll(".imgBig-index")
+const btnRightCl = document.querySelector(".btn-right-cl")
+const btnLeftCl = document.querySelector(".btn-left-cl")
 
+// IMG DOM
 const srcIndex = document.querySelectorAll(".src-index")
 const imgBig = document.querySelectorAll(".imgBig")
 const src = document.querySelectorAll(".src")
 const clickImage = document.querySelector(".img-preview-show-click")
 
+// INFO
 let priceShoes = 125
 let number = document.querySelector(".number")
 let count = 0
 let valores = []
 let idcActual = 0
+let idcPrev = 0
 
 
-
-
-
+// ACTIVE EMPTY CART
 function toggleEmptyCart() {
     cartEmpty.classList.toggle("active-cart-empty")  
 }
 
+// REMOVE EMPTY CART
 function removeEmptyCart() {
     cartEmpty.classList.add("active-cart-empty")  
 }
 
+// RETURN EMPTY CART
 function returnEmptyCart() {
     cartBtn.addEventListener("click", toggleEmptyCart)
 }
 
+
+// CTIVE CART FULL
 function activeCartFull() {  
     cartFull.classList.toggle("active-cart-full")  
 }
 
+// REMOVE CART FULL
 function removeCartFull() {
     cartFull.classList.add("active-cart-full");
     cartBtn.removeEventListener("click", activeCartFull);
 }
 
+// IF IT IS A PRODUCT
 function oneProduct() {
     turn.style.display = "none"
     amount.style.display = "none"
@@ -60,19 +71,17 @@ function oneProduct() {
 }
 
 
-
+// CLICK IMAGE Z-INDEX
 imgBig.forEach((img) => {
     img.addEventListener("click", () => { 
-        contSob = true
         body.classList.add("dark-screen")
         clickImage.classList.remove("hidden")
         main.classList.add("event-off")
         header.classList.add("event-off")
-        
-        
     })
 })
 
+// TO CHANGE THE Z-INDEX IMAGE
 const classesMapIndex = {
     "src1-index": "big-1-index",
     "src2-index": "big-2-index",
@@ -85,8 +94,7 @@ srcIndex.forEach((img, idc) => {
         let item = e.currentTarget
         imgBigIndex.forEach((big) => { 
             big.classList.remove("active")
-            big.classList.add("hidden")
-            
+            big.classList.add("hidden")  
         })
      
         idcActual = idc
@@ -94,14 +102,13 @@ srcIndex.forEach((img, idc) => {
         const bigImgClass = classesMapIndex[item.classList[1]]
         let bigImg = document.querySelector(`.${bigImgClass}`)
         if (bigImg) {
-            
             bigImg.classList.add("active")
             bigImg.classList.remove("hidden")
         } 
     })
 })
 
-
+// TO CHANGE THE IMAGE
 const classesMap = {
   "src1": "big-1",
   "src2": "big-2",
@@ -109,41 +116,34 @@ const classesMap = {
   "src4": "big-4",
 }
 
-let imgBtn = false
+src.forEach((img, idc) => {
+    img.addEventListener("click", (e) => {
+        console.log(imgBtn)
+        const item = e.currentTarget;
+        imgBig.forEach((big) => {
+            big.classList.remove("active");
+            big.classList.add("hidden");
+        });
 
-if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-    imgBtn = true
-} else {
-    
-}
+        idcPrev = idc
 
-console.log(imgBtn)
-
-if (imgBtn == false) {
-    src.forEach((img) => {
-        img.addEventListener("click", (e) => {
-            console.log(imgBtn)
-            const item = e.currentTarget;
-            imgBig.forEach((big) => {
-                big.classList.remove("active");
-                big.classList.add("hidden");
-            });
-            const bigImgClass = classesMap[item.classList[1]];
-            const bigImg = document.querySelector(`.${bigImgClass}`);
-            if (bigImg) {
-                bigImg.classList.add("active");
-                bigImg.classList.remove("hidden");
-            }
+        const bigImgClass = classesMap[item.classList[1]];
+        const bigImg = document.querySelector(`.${bigImgClass}`);
+        if (bigImg) {
+            bigImg.classList.add("active");
+            bigImg.classList.remove("hidden");
+        }
         
-        })   
-    }); 
-}
+    })   
+});
 
 
+// EVENT BTNS
 
-
+// SHOW EMPTY CART
 cartBtn.addEventListener("click", toggleEmptyCart)
 
+// REMOVE PRODUCT FROM CART
 trashBtn.addEventListener("click", () => {
     count = 0;
     number.textContent = count;
@@ -152,14 +152,47 @@ trashBtn.addEventListener("click", () => {
     valores = []
 })
 
+// CLOSE CONTENT Z-INDEX
 btnQuit.addEventListener("click", () => {
-    contSob = false
     clickImage.classList.add("hidden")
     body.classList.remove("dark-screen")
     main.classList.remove("event-off")
     header.classList.remove("event-off")
 })
 
+// BTN RIGHT FROM PHONE
+btnRightCl.addEventListener("click", () => {
+    imgBig[idcPrev].classList.remove("active")
+    imgBig[idcPrev].classList.add("hidden")
+
+    idcPrev++
+
+    console.log(idcPrev)
+
+    if(idcPrev >= imgBig.length) {
+        idcPrev = 0
+    }
+    imgBig[idcPrev].classList.remove("hidden")
+    imgBig[idcPrev].classList.add("active")
+})
+
+// BTN LEFT FROM PHONE
+btnLeftCl.addEventListener("click", () => {
+    imgBig[idcPrev].classList.remove("active")
+    imgBig[idcPrev].classList.add("hidden")
+
+    idcPrev--
+
+    console.log(idcPrev)
+
+    if(idcPrev < 0) {
+        idcPrev = imgBig.length -1
+    }
+    imgBig[idcPrev].classList.remove("hidden")
+    imgBig[idcPrev].classList.add("active")
+})
+
+// BTN RIGHT FROM DESKTOP
 btnRight.addEventListener("click", () => {
     imgBigIndex[idcActual].classList.remove("active");
     imgBigIndex[idcActual].classList.add("hidden");
@@ -174,6 +207,7 @@ btnRight.addEventListener("click", () => {
     imgBigIndex[idcActual].classList.add("active"); 
 })
 
+// BTN LEFT FROM DESKTOP
 btnLeft.addEventListener("click", () => {
     imgBigIndex[idcActual].classList.remove("active");
     imgBigIndex[idcActual].classList.add("hidden");
@@ -187,7 +221,7 @@ btnLeft.addEventListener("click", () => {
     imgBigIndex[idcActual].classList.add("active");
 })
 
-
+// BTN ADD PRODUCT FROM CART
 addCart.addEventListener("click", (e) => {
     e.preventDefault()
  
@@ -205,12 +239,14 @@ addCart.addEventListener("click", (e) => {
     }    
 })
 
+// BTN PLUS
 mais.addEventListener("click", (e) => {
     e.preventDefault()  
     count++
     number.textContent = count
 })
 
+// BTN MINUS
 menos.addEventListener("click", (e) => {
     e.preventDefault()
     if (count <= 0) {

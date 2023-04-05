@@ -444,6 +444,14 @@ footer {
     display: none;
 }
 
+.btn-left-cl {
+    display: none;
+}
+
+.btn-right-cl {
+    display: none;
+}
+
 
 @media only screen and (max-width: 550px) {
     * {
@@ -602,37 +610,72 @@ footer {
         
     }
 
-    .btn-left {
+    .btn-left-cl {
+        display: block;
         position: absolute;
+        height: 40px;
+        width: 40px;
         top: 50%;
         left: 5.5%;
-        background-color: white;
-        padding: 20px 20px 20px 20px;
-        border-radius: 50%;
         cursor: pointer;
+        background-color: white;
+        border-radius: 50%;
     }
 
-    .btn-left > i {
+    .btn-left-cl > i {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        font-size: 1.5em;
+    }
+
+    .btn-right-cl {
+        display: block;
+        position: absolute;
+        height: 40px;
+        width: 40px;
+        top: 50%;
+        left: 80%;
+        cursor: pointer;
+        background-color: white;
+        border-radius: 50%;
         
     }
 
-    .btn-right {
-        position: absolute;
-        left: 80%;
-        background-color: white;
-        padding: 12px 14.7px 12px 14.7px;
-        border-radius: 50%;
-        cursor: pointer;
+    .btn-right-cl > i {
+        font-size: 1.5em;
+        margin-top: 8px;
+        margin-left: 12px;
     }
 
-   
+    .cart-empty {
+        position: absolute;
+        height: 220px;
+        width: 345px;
+        z-index: 2;
+        left: 4%;
+    }
 
-    
-    
+    .cart-full {
+        position: absolute;
+        z-index: 2;
+        left: 4%;
+        height: 220px;
+        width: 345px;
+    }
+
+    .box-title-cart {
+        margin-left: 35px;
+    }
+
+    .acording-cart-product {
+        margin-left: 15px;
+    }
+
+    .box-checkout {
+        margin-left: 32px;
+    }
     
 }
 
