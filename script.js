@@ -106,8 +106,7 @@ const classesMap = {
 }
 
 src.forEach((img) => {
-    if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-      img.addEventListener("click", (e) => {
+    img.addEventListener("click", (e) => {
         const item = e.currentTarget;
   
         imgBig.forEach((big) => {
@@ -121,8 +120,8 @@ src.forEach((img) => {
           bigImg.classList.add("active");
           bigImg.classList.remove("hidden");
         }
-      });
-    }
+    });
+    
   });
 
 
