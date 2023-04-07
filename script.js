@@ -7,6 +7,8 @@ const main = document.querySelector("main")
 const amount = document.querySelector(".amount")
 const cartFull = document.querySelector(".cart-full")
 const cartEmpty = document.querySelector(".cart-empty")
+const menu = document.querySelector(".menu")
+const menuClose = document.querySelector(".close-btn")
 
 // BTN
 const menos = document.querySelector(".menos")
@@ -20,6 +22,7 @@ const btnQuit = document.querySelector(".btn-quit")
 const imgBigIndex = document.querySelectorAll(".imgBig-index")
 const btnRightCl = document.querySelector(".btn-right-cl")
 const btnLeftCl = document.querySelector(".btn-left-cl")
+const hambBtn = document.querySelector(".menu-hamb")
 
 // IMG DOM
 const srcIndex = document.querySelectorAll(".src-index")
@@ -118,7 +121,6 @@ const classesMap = {
 
 src.forEach((img, idc) => {
     img.addEventListener("click", (e) => {
-        console.log(imgBtn)
         const item = e.currentTarget;
         imgBig.forEach((big) => {
             big.classList.remove("active");
@@ -167,8 +169,6 @@ btnRightCl.addEventListener("click", () => {
 
     idcPrev++
 
-    console.log(idcPrev)
-
     if(idcPrev >= imgBig.length) {
         idcPrev = 0
     }
@@ -182,8 +182,6 @@ btnLeftCl.addEventListener("click", () => {
     imgBig[idcPrev].classList.add("hidden")
 
     idcPrev--
-
-    console.log(idcPrev)
 
     if(idcPrev < 0) {
         idcPrev = imgBig.length -1
@@ -255,6 +253,15 @@ menos.addEventListener("click", (e) => {
         count-- 
     } 
     number.textContent = count            
+})
+
+
+hambBtn.addEventListener("click", () => {
+    menu.classList.add("menu-show")
+})
+
+menuClose.addEventListener("click", () => {
+    menu.classList.remove("menu-show")
 })
 
 

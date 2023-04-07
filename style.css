@@ -214,8 +214,6 @@ main {
     gap: 25px;
 }
 
-
-
 .img-small img {
     width: 81px;
     border-radius: 8px;
@@ -381,6 +379,10 @@ main {
     font-size: 2.5em;
 }
 
+.dat {
+    margin-left: 27px;
+}
+
 .btn-right {
    position: absolute;
    top: 50%;
@@ -452,6 +454,9 @@ footer {
     display: none;
 }
 
+.close-btn {
+    display: none;
+}
 
 @media only screen and (max-width: 550px) {
     * {
@@ -462,15 +467,14 @@ footer {
 
     body {
         width: 100vw; 
-        height: 100vh;
-          
-         
+        height: 100vh;  
     }
 
     .body-color {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        padding-bottom: 20px;
     }
 
     header {
@@ -495,14 +499,43 @@ footer {
         font-size: 1.3em;
     }
 
+    .close-btn {
+        display: block;
+        cursor: pointer;
+        font-size: 1.3em;
+    }
+
     .logo-img {
         margin-left: 15px;
     }
 
     .menu {
-        display: none;
+        position: fixed;
+        background-color: white;
+        width: 70%;
+        height: 100%;
+        top: 0;
+        left: -100%;
+        z-index: 3;
+        transition: left .3s; 
     }
 
+    .menu-show {
+        left: 0;
+    }
+
+    .menu ul {
+        display: flex;
+        flex-direction: column;
+        margin-left: 30px;
+        margin-top: 50px;
+    }
+    
+    .menu ul li {
+        font-weight: 600;
+    }
+
+    
     .box-avatar {
         margin-right: 20px;
     }
@@ -589,8 +622,7 @@ footer {
         justify-content: center;
         gap: 105px;
         width: 100vw;
-        margin-left: 0px;
-           
+        margin-left: 0px;    
     }
 
     .add-cart {
@@ -600,14 +632,9 @@ footer {
     }
 
     footer {
-        margin-top: 40px;
-        width: 100vw; 
-
-    }
-
-    .btn-menu-phone {
-        
-        
+        display: none;
+        margin-top: 20px;
+        width: 100vw;
     }
 
     .btn-left-cl {
@@ -636,11 +663,10 @@ footer {
         height: 40px;
         width: 40px;
         top: 50%;
-        left: 80%;
+        left: 84%;
         cursor: pointer;
         background-color: white;
         border-radius: 50%;
-        
     }
 
     .btn-right-cl > i {
@@ -676,7 +702,6 @@ footer {
     .box-checkout {
         margin-left: 32px;
     }
-    
 }
 
 
